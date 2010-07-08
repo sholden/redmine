@@ -1,5 +1,6 @@
 class ChangeChangesPathLengthLimit < ActiveRecord::Migration
   def self.up
+    change_column_default :changes, :path, nil
     change_column :changes, :path, :text, :null => false
     change_column :changes, :from_path, :text
   end
